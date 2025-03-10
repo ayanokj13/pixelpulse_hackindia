@@ -1,8 +1,9 @@
-#**Mindlancer.com - Freelance Marketplace **
+**Mindlancer.com - Freelance Marketplace **
 
 Mindlancer.com is a freelance marketplace platform where freelancers (software developers) can showcase their skills and businesses/project owners can hire them for software development projects.
 
-📌** Project Overview**
+📌**Project Overview**
+
 Mindlancer provides a platform where:
  1. Freelancers can showcase their skills, experience, and apply for jobs.
  2. Businesses can post job listings, hire freelancers, and manage projects.
