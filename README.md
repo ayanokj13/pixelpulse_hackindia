@@ -1,4 +1,4 @@
-#Mindlancer.com - Freelance Marketplace  
+**Mindlancer.com - Freelance Marketplace  **
 Mindlancer.com is a freelance marketplace platform where freelancers (software developers) can showcase their skills and businesses/project owners can hire them for software development projects.
 
 📌** Project Overview**
@@ -18,6 +18,7 @@ Mindlancer provides a platform where:
  3. JWT & OAuth (Authentication)
  4. PayPal (Payments)
 
+
 **Progress So Far**
 
 **🖥️ UI Development (React.js) - 50% Completed**
@@ -36,6 +37,7 @@ Remaining task:
  1. Job Search APIs (Freelancers can view jobs)
  2. Freelancer Proposal System
  3. Payment Gateway Integration
+
 
 **🔜 Next Steps:**
 1. Payments & Escrow System
