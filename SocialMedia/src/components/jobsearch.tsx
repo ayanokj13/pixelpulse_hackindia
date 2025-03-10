@@ -1,21 +1,18 @@
+import { useState } from "react";
 import { FaSearch, FaMapMarkerAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/button";
-import footer from "../components/footer"; // Import Footer Component
+import Footer from "../components/footer";
 
 export default function JobSearchUI() {
   const navigate = useNavigate();
+  const [showRegisterOptions, setShowRegisterOptions] = useState(false);
 
   return (
-
     <div className="min-h-screen bg-blue-50 p-6">
-    {/* Tailwind Test */}
-    <h1 className="text-red-500">If this is red, Tailwind is working!</h1>
-
       {/* Navbar */}
       <nav className="flex justify-between items-center p-4 bg-white shadow-md rounded-lg">
         <h1 className="text-2xl font-bold text-blue-600 cursor-pointer" onClick={() => navigate("/")}>
-          HUNTER
+         MINDLANCEER
         </h1>
         <ul className="hidden md:flex space-x-6 text-gray-600">
           <li className="cursor-pointer hover:text-blue-600" onClick={() => navigate("/")}>Home</li>
@@ -23,11 +20,35 @@ export default function JobSearchUI() {
           <li className="cursor-pointer hover:text-blue-600" onClick={() => navigate("/employers")}>Employers</li>
           <li className="cursor-pointer hover:text-blue-600" onClick={() => navigate("/contact")}>Contact</li>
         </ul>
-        <div className="space-x-4">
-          <button className="text-blue-600 hover:underline" onClick={() => navigate("/login")}>Login</button>
-          <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onClick={() => navigate("/register")}>
-            Register
-          </button>
+        <div className="space-x-4 relative">
+          <button className="text-blue-600 hover:underline" onClick={() => navigate("/ecruiterlog")}>Login</button>
+
+          {/* Register Button with Dropdown */}
+          <div className="relative inline-block">
+            <button
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+              onClick={() => setShowRegisterOptions(!showRegisterOptions)}
+            >
+              Register
+            </button>
+
+            {showRegisterOptions && (
+              <div className="absolute right-0 mt-2 bg-white shadow-md rounded-lg w-48 z-50">
+                <button
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                  onClick={() => navigate("/register/user")}
+                >
+                  Register as User
+                </button>
+                <button
+                  className="block w-full text-left px-4 py-2 hover:bg-gray-100"
+                  onClick={() => navigate("/recruitersignup")}
+                >
+                  Register as Recruiter
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </nav>
 
@@ -45,7 +66,7 @@ export default function JobSearchUI() {
           </p>
 
           {/* Search Bar */}
-          <div className="mt-6 flex flex-col md:flex-row bg-white p-3 rounded-lg shadow-md space-y-3 md:space-y-0 md:space-x-3">
+          <div className="mt-6 flex flex-col md:flex-row bg-white p-3 rounded-lg shadow-md space-y-4 md:space-y-0 md:space-x-4">
             <div className="flex items-center space-x-2 bg-gray-100 p-2 rounded-md w-full md:w-auto">
               <FaSearch className="text-gray-400" />
               <input type="text" placeholder="Job title" className="bg-transparent outline-none w-full" />
@@ -58,13 +79,16 @@ export default function JobSearchUI() {
                 <option>New York</option>
               </select>
             </div>
-            <Button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Search</Button>
+            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
+              Search
+            </button>
           </div>
         </div>
 
         {/* Hero Image */}
         <div className="relative mt-10 md:mt-0">
           <img src="src/components/hero-image.jpg" alt="hero" className="w-80 rounded-lg shadow-lg" />
+
           <div className="absolute top-5 left-5 bg-white p-2 shadow-lg rounded-lg">
             <p className="text-sm font-semibold">2K+ Vacancies</p>
           </div>
@@ -74,6 +98,14 @@ export default function JobSearchUI() {
           <div className="absolute top-5 right-5 bg-white p-2 shadow-lg rounded-lg">
             <p className="text-sm font-semibold">⭐ 4.8 Satisfaction</p>
           </div>
+
+          {/* Explore Button */}
+          <button
+            className="mt-12 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+            onClick={() => navigate("/jobs")}
+          >
+            Explore Recent Openings
+          </button>
         </div>
       </div>
 
@@ -86,25 +118,8 @@ export default function JobSearchUI() {
         <p className="text-blue-800 font-semibold">LinkedIn</p>
       </div>
 
-      <div className="min-h-screen bg-blue-50 p-6 flex flex-col items-center">
-      <h1 className="text-3xl font-bold mb-4">Find Your Dream Job</h1>
-      <button
-        className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
-        onClick={() => navigate("/jobs")}
-      >
-        Search Jobs
-      </button>
+      {/* Footer */}
+      <Footer />
     </div>
-
-      <div className="min-h-screen bg-blue-50 p-6">
-      {/* Your existing UI components */}
-
-      <footer /> {/* ✅ Footer should render here */}
-    </div>
-
-
-    </div>
-
   );
-  
 }
