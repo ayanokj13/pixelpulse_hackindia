@@ -24,17 +24,21 @@ Mindlancer provides a platform where:
 **Progress So Far**
 
 **🖥️ UI Development (React.js) - 50% Completed**
+
 Completed task:  
  1. Login & Signup Pages
  2. Freelancer & Business Dashboard
+
 Remaining task:
  1. Job Posting UI (In Progress)
  2. Proposal Submission UI
  
 **🛠️ Backend Development - In Progress**
+
 Completed task: 
  1. User Authentication (Signup & Login)
  2. Job Posting APIs (Businesses can post jobs)
+    
 Remaining task:
  1. Job Search APIs (Freelancers can view jobs)
  2. Freelancer Proposal System
